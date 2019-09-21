@@ -6,37 +6,57 @@
     <title>Start</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/start.css'>
-    <script src='js/start.js'></script>
+    
 </head>
 <body >
 
     <div class="start">
-    <div id="login">
+         <div id="login">
+                <div id="gameNameForm">
+                        <h1 id="gameName">حرب الخليج</h1>
+                    </div>
         <button id="help">Help</button>
         <h2 id="usrname">Enter Your Name</h2>
 
         <input type= "text" id="player_name">
         <h4 id="message">At least 3 character</h4>
 
-        <button class="button">Levels</button>
+        <button class="button" id="level_button">Levels</button>
         <br><br><br>
-        <button class="button">character</button>
+        <button class="button" id="character_button">character</button>
         <br><br><br>
-        <button class="button">Play</button>
+        <button class="button" id="playButton" name="played">Play</button>
         <br><br><br>
     </div>
 
 
     <div class="level_form">
-        <button class="hide_form_button">
+        <button id="hide_level_button">
         <img src="images/back.jpg" style="width:30px; height:25px">
         </button>
         <br><br>
-        <img src="images/easy.png" class="img_level" width="100px" height="100px">
-        <img src="images/medium.png" class="img_level" width="100px" height="100px"> 
-        <img src="images/hard.png" class="img_level" width="100px" height="100px">
+        <img src="images/easy.png" class="img_level" name="1">
+        <img src="images/medium.png" class="img_level" name="2"> 
+        <img src="images/hard.png" class="img_level" name="3">
     </div>
 
+
+    <div class="Char_form">
+        <button id="hide_char_form">
+                <img src="images/back.jpg" style="width:30px; height:25px">
+        </button>
+        <br><br>
+        <img src="images/anime03.png" class="cahr_img" name="1">
+        <img src="images/anime04.png" class="cahr_img" name="2">
+        <img src="images/anime05.png" class="cahr_img" name="3">
+
     </div>
+
+
+
+
+    </div>
+
+    <script src='js/start.js'></script>
 </body>
 </html>
