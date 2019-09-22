@@ -9,9 +9,14 @@ var level_button_hide = document.getElementById("hide_level_button");
 var char_button_hide = document.getElementById("hide_char_form");
 var level_img = document.getElementsByClassName("img_level");
 var char_img = document.getElementsByClassName("cahr_img");
+var help_form = document.getElementsByClassName("help_form");
+var help_button_hide = document.getElementById("hide_help_form");
+var help_button = document.getElementById("help");
 
 var Level=1;
 var character=1;
+
+
 
 function show_level(){
     level_form[0].style.display = "block";
@@ -41,6 +46,16 @@ function hide_level(){
     }
  }
 
+function show_help(){
+    help_form[0].style.display = "block";
+    login_form.style.display = "none";
+}
+
+function hide_help(){
+    help_form[0].style.display = "none";
+    login_form.style.display = "block";
+}
+
  function level_check(event){
      Level = event.target.name;
      hide_level();
@@ -56,6 +71,8 @@ function hide_level(){
  level_button_hide.addEventListener('click' , hide_level);
  char_button.addEventListener('click' , show_char);
  char_button_hide.addEventListener('click' , Hide_Char);
+ help_button_hide.addEventListener('click' , hide_help);
+ help_button.addEventListener('click' , show_help);
 
  for(var i =0; i < level_img.length ; i++){
      level_img[i].addEventListener('click' , level_check);
@@ -65,3 +82,5 @@ function hide_level(){
  }
 
  localStorage["player"]=player_name.value;
+ 
+ 

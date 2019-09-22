@@ -64,6 +64,7 @@ body{
     height: 100px;
     border-radius: 3px;
     margin-left: 15%;
+    margin-left: 20%;
     margin-top: 2%;
     padding-left: 2%;
     padding-right: 5%;
@@ -77,7 +78,7 @@ body{
     color: rgb(248, 244, 242);
     width: 110%;
     height: 30px;
-    margin-left: 25%;
+    margin-left: 30%;
     font-size: 40px;
     font-weight: bold;
     font-style: initial;
@@ -92,6 +93,10 @@ body{
     display: none;
     align-content: center;
 }
+.help_form{
+    display: none;
+   
+}
 
 .img_level{
     width: 90px;
@@ -105,4 +110,18 @@ body{
     height: 150px;
     cursor: pointer;
     margin-left: 10%;
+}
+
+
+pre{
+    font-size: 16px;
+}
+
+#hide_help_form{
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+audio{
+    display: none;
 }
