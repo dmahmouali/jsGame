@@ -9,7 +9,8 @@ body {
     height: 100vh;
     background-size: cover;
     background-position: 0 0;
-    animation: animate 15s linear forwards;
+    animation: animate 50s linear forwards;
+    z-index: -1;
 }
 
 @keyframes animate {
@@ -26,5 +27,5 @@ body {
     bottom: 10px;
     height: 110px;
     width: 90px;
-    left: 800px;
+    left: 0px;
 }
