@@ -6,7 +6,56 @@ var arrBolat = [];
 var score = 0;
 var health = 2;
 var final_death = false;
+var enemy_spawn_time_1 ;
+var enemy_spawn_time_2 ;
 
+var urlParams = new URLSearchParams(window.location.search)
+var playerName = urlParams.get("player")
+var level = urlParams.get("level")
+var character = urlParams.get("character")
+
+document.getElementById('name').innerText = playerName ;
+var image_level = document.getElementsByClassName('bg')[0];
+if(level == 1)
+{
+    image_level.setAttribute("style","background: #000000 url(images/level01.png); background-size: cover; background-position: 0 0;");
+    enemy_spawn_time_1 = 90;
+    enemy_spawn_time_2 = 60;
+
+}
+else if(level == 2)
+{
+    image_level.setAttribute("style","background: #000000 url(images/level02.png); background-size: cover; background-position: 0 0; animation: animate 30s linear forwards;");
+    enemy_spawn_time_1 = 70;
+    enemy_spawn_time_2 = 50;
+
+}
+else if (level == 3)
+{
+    image_level.setAttribute("style","background: #000000 url(images/level03.png); background-size: cover; background-position: 0 0; animation: animate 20s linear forwards;");
+    enemy_spawn_time_1 = 10;
+    enemy_spawn_time_2 = 10;
+
+}
+
+
+if(character == 1)
+{
+    player.src = "images/character.gif";
+}
+else if(character == 2)
+{
+    player.src = "images/narto.gif";
+}
+else if(character == 3)
+{
+    player.src = "images/mario.gif";
+}
+
+
+
+var chosen_player = player.src;
+console.log(chosen_player) ;
 function getCssProperty(player, property) {
 
     return window.getComputedStyle(player, null).getPropertyValue(property);
@@ -16,12 +65,12 @@ let enemy1_interval;
 let enemy2_interval;
 enemy_spawn();
 
-let enemy_spawn_1 = setInterval(enemy_spawn, 7000);
-let enemy_spawn_2 = setInterval(enemy_spawn2, 4000);
+let enemy_spawn_1 = setInterval(enemy_spawn, 3000);
+let enemy_spawn_2 = setInterval(enemy_spawn2, 2000);
 
 function enemy_spawn() {
 
-    let rundomTime = Math.random() * 90;
+    let rundomTime = Math.random() * enemy_spawn_time_1;
     var enemy = document.createElement('img');
     enemy.src = 'images/anime03.png';
     document.getElementsByClassName('bg')[0].appendChild(enemy);
@@ -57,7 +106,7 @@ function enemy_spawn() {
                         player.src = "images/anime05.png";
                         document.getElementById('health').innerText = 1;
                         setTimeout(function() {
-                            player.src = "images/character.gif";
+                            player.src = chosen_player;
                             final_death = true;
                         }, 1000)
                     }
@@ -67,7 +116,7 @@ function enemy_spawn() {
                         var my_modal = document.getElementById('myModal');
                         var modal_body = document.getElementById('lose');
                         player.src = "images/anime02.png";
-                        modal_body.innerHTML = "<p>Game Over</p>";
+                        modal_body.innerHTML = "<p>Game Over</p>" + playerName;
                         my_modal.style.display = "block";
                         health = 0;
                     }
@@ -81,7 +130,7 @@ function enemy_spawn() {
 
 function enemy_spawn2() {
 
-    let rundomTime = Math.random() * 60;
+    let rundomTime = Math.random() * enemy_spawn_time_2;
     var enemy = document.createElement('img');
     enemy.src = 'images/deep.gif';
     document.getElementsByClassName('bg')[0].appendChild(enemy);
@@ -117,7 +166,7 @@ function enemy_spawn2() {
                         player.src = "images/anime05.png";
                         setTimeout(function() {
                             final_death = true;
-                            player.src = "images/character.gif";
+                            player.src = chosen_player;
                         }, 1000)
                     }
                     ////// 
@@ -126,7 +175,7 @@ function enemy_spawn2() {
                         var my_modal = document.getElementById('myModal');
                         var modal_body = document.getElementById('lose');
                         player.src = "images/anime02.png";
-                        modal_body.innerHTML = "<p>Game Over</p>";
+                        modal_body.innerHTML = "<p>Game Over</p>" + playerName ;
                         my_modal.style.display = "block";
                         health = 0;
                     }

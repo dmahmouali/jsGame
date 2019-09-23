@@ -13,7 +13,7 @@ var help_form = document.getElementsByClassName("help_form");
 var help_button_hide = document.getElementById("hide_help_form");
 var help_button = document.getElementById("help");
 
-var Level=1;
+var level=1;
 var character=1;
 
 
@@ -42,7 +42,7 @@ function hide_level(){
     if(player_name.value.length < 3){
         alert("Your name must be at least 3 character");
     }else{
-            window.location.href = "gameLevel.html?player="+player_name.value+"&level="+Level+"&character="+character;
+            window.location.href = "gameLevel.html?player="+player_name.value+"&level="+level+"&character="+character;
     }
  }
 
@@ -57,8 +57,9 @@ function hide_help(){
 }
 
  function level_check(event){
-     Level = event.target.name;
+     level = event.target.name;
      hide_level();
+     changeimg(level);
  }
  function char_check(event){
      character = event.target.name;
@@ -83,4 +84,31 @@ function hide_help(){
 
  localStorage["player"]=player_name.value;
  
+ 
+
+
+ function changeimg(imgRank){
+    var images =document.getElementsByClassName("map");
+    console.log(images.length);
+    var imageSrc = ["images/easy.png", "images/easy.png", "images/easy.png"];
+    console.log(images[imgRank-1]);
+
+    for(var i =0 ; i < images.length ; i++){
+            if ((imgRank -1) == i) {
+                images[i].src = imageSrc[i];
+            }else{
+                images[i].src = "images/gray.png";
+            }
+    }
+
+    changeText(imgRank);
+}
+
+
+function changeText(rank){
+    var paragraph = document.getElementsByClassName("message")[0];
+    console.log(paragraph);
+    var paragraphText = ["Level 1", "Level 2", "Level 3"]
+    paragraph.innerHTML = paragraphText[rank - 1]
+}
  

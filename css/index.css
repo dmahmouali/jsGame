@@ -9,7 +9,7 @@ body {
     height: 100vh;
     background-size: cover;
     background-position: 0 0;
-    animation: animate 10s linear forwards;
+    animation: animate 40s linear forwards;
     z-index: -1;
 }
 
@@ -53,6 +53,27 @@ body {
     color: #fefefe;
     text-align: center;
     padding-top: 45px;
+}
+
+.player_name{
+    position: absolute;
+    background-color: rgba(7, 139, 36, 0.61);
+    width: 250px;
+    height: 100px;
+    /* Full width */
+    padding: 10px;
+    /* Some padding */
+    border: 1px solid;
+    /* Gray border */
+    border-radius: 20px;
+    /* Rounded borders */
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: 50px;
+    right: 45%;
+    color: #fefefe;
+    text-align: center;
+    font-size: 40px;
 }
 
 @keyframes animate {
