@@ -9,9 +9,33 @@
 </head>
 
 <body>
+    <div class="score_div">
+        <label>Score : </label>
+        <label id="score">0</label>
+    </div>
+    <div class="health_div">
+        <label>Health : </label>
+        <label id="health">2</label>
+    </div>
     <div class="bg">
         <img src="images/character.gif" alt="notFound character !" class="player">
     </div>
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-body" id="lose">
+                <p>Congrats</p>
+                <p>You completed level</p>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 <script src="js\game.js"></script>
+
 </html>
